@@ -1,4 +1,7 @@
 // TODO: Include packages needed for this application
+const generateMarkdown = require('./utils/generateMarkdown')
+const inquirer = require('inquirer');
+const fs = require('fs');
 // We import the `fs` module to enable interaction with the file system
 
 
@@ -26,8 +29,7 @@ function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
-const inquirer = require('inquirer');
-const fs = require('fs');
+
 
 inquirer
 .prompt([
