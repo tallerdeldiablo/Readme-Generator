@@ -15,62 +15,66 @@ const questions = [];
 // TODO: Create a function to write README file
 
 const generateREADME = ({ github, ema, pro, lic }) =>
-  ` # ${name}# ${location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${github}</li>
-      <li class="list-group-item">LinkedIn: ${linkedin}</li>
-    </ul>
-  </div>
-</div>
-</body>
-</html>`;
+  ` # README GENERATOR
+  ## ${github}
+  
+  ###### email ${ema} 
+
+    ##
+     poject name${pro}
+
+     # 
+     __This project is licensed under the__ ${lic}
+
+     ~~NO license~~
+  `;
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
 
 
-inquirer
-.prompt([
-  {
-    type: 'input',
-    name: 'gihub',
-    message: 'What is your Github?',
-  },
-  {
-    type: 'input',
-    name: 'ema',
-    message: 'What is your email?',
-  },
-  {
-    type: 'input',
-    name: 'pro',
-    message: 'What is your project name?',
-  },
-  {
-    type: 'checkbox',
-    message: 'What license?',
-    name: 'lic',
-    choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
-  },
-  {
-    type: 'list',
-    message: 'What is your preferred method of communication?',
-    name: 'contact',
-    choices: ['email', 'phone', 'telekinesis'],
-  },
-])
-.then((answers) => {
-  const readMePageContent = generateREADME(answers);
+  inquirer
+    .prompt([
+      {
+        type: 'input',
+        name: 'github',
+        message: 'What is your Github?',
+      },
+      {
+        type: 'input',
+        name: 'ema',
+        message: 'What is your email?',
+      },
+      {
+        type: 'input',
+        name: 'pro',
+        message: 'What is your project name?',
+      },
+      {
+        type: 'checkbox',
+        message: 'What license?',
+        name: 'lic',
+        choices: ['Apache', 'Gnu 2', 'Gnu 3', 'none'],
+      },
+      {
+        type: 'input',
+        message: 'What is your preferred method of communication?',
+        name: 'contact',
+        choices:'telekinesis',
+      },
+      ])
+        .then((answers) => {
+        const readMePageContent = generateREADME(answers);
 
-  //const filename = `${answers.name.toLowerCase().split(' ').join('')}.md`;
+        //const filename = `${answers.name.toLowerCase().split(' ').join('')}.md`;
 
-  fs.writeFile('readme.md', readMePageContent, (err) =>
-    err ? console.log(err) : console.log(answers)
-  );
+        fs.writeFile('readme.md', readMePageContent, (err) =>
+          err ? console.log(err) : console.log(answers)
+        );
 
-});
+  });
+}
 //This project is licensed under the APACHE 2.0 license
 // Function call to initialize app
 //Table of contents
