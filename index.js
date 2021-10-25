@@ -16,6 +16,9 @@ const questions = [];
 
 const generateREADME = ({ github, ema, pro, lic }) =>
   ` # README GENERATOR
+  [GitHub Pages](https://pages.github.com/).
+  
+
   ## ${github}
   
   ###### email ${ema} 
@@ -67,9 +70,12 @@ function init() {
         .then((answers) => {
         const readMePageContent = generateREADME(answers);
 
+        const newContent =  generateMarkdown(answers);
+
         //const filename = `${answers.name.toLowerCase().split(' ').join('')}.md`;
 
-        fs.writeFile('readme.md', readMePageContent, (err) =>
+        //fs.writeFile('readme.md', readMePageContent, (err) =>
+        fs.writeFile('readme.md', newContent, (err) =>
           err ? console.log(err) : console.log(answers)
         );
 
