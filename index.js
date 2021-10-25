@@ -58,7 +58,7 @@ function init() {
         type: 'checkbox',
         message: 'What license?',
         name: 'lic',
-        choices: ['Apache', 'Gnu 2', 'Gnu 3', 'none'],
+        choices: ['Apache', 'GNU', 'MIT', 'none'],
       },
       {
         type: 'input',
