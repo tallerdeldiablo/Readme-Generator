@@ -12,8 +12,10 @@ const questions = [];
 
 
 
-// TODO: Create a function to write README file
 
+// TODO: Create a function to write README file
+  //fs.writeFile('readme.md', readMePageContent, (err) =>
+  
 const generateREADME = ({ github, ema, pro, lic }) =>
   ` # README GENERATOR
   [GitHub Pages](https://pages.github.com/).
@@ -56,17 +58,11 @@ function init() {
       },
       {
         type: 'checkbox',
-        message: 'What license?',
+        message: 'Select the license?',
         name: 'lic',
         choices: ['Apache', 'GNU', 'MIT', 'none'],
       },
-      {
-        type: 'input',
-        message: 'What is your preferred method of communication?',
-        name: 'contact',
-        choices:'telekinesis',
-      },
-      ])
+           ])
         .then((answers) => {
         const readMePageContent = generateREADME(answers);
 
@@ -74,10 +70,11 @@ function init() {
 
         //const filename = `${answers.name.toLowerCase().split(' ').join('')}.md`;
 
-        //fs.writeFile('readme.md', readMePageContent, (err) =>
-        fs.writeFile('readme.md', newContent, (err) =>
-          err ? console.log(err) : console.log(answers)
-        );
+     
+  fs.writeFile('readme.md', newContent, (err) =>
+  err ? console.log(err) : console.log(answers)
+);
+
 
   });
 }
