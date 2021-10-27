@@ -1,9 +1,9 @@
 // TODO: Include packages needed for this application
 const generateMarkdown = require('./utils/generateMarkdown')
 const inquirer = require('inquirer');
-const fs = require('fs');
-// We import the `fs` module to enable interaction with the file system
 
+// We import the `fs` module to enable interaction with the file system
+const fs = require('fs');
 
 // appendFile() takes in 3 arguments: path, data, and callback function
 
@@ -14,25 +14,8 @@ const questions = [];
 
 
 // TODO: Create a function to write README file
-  //fs.writeFile('readme.md', readMePageContent, (err) =>
-  
-const generateREADME = ({ github, ema, pro, lic }) =>
-  ` # README GENERATOR
-  [GitHub Pages](https://pages.github.com/).
-  
 
-  ## ${github}
-  
-  ###### email ${ema} 
 
-    ##
-     poject name${pro}
-
-     # 
-     __This project is licensed under the__ ${lic}
-
-     ~~NO license~~
-  `;
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
@@ -43,18 +26,18 @@ function init() {
     .prompt([
       {
         type: 'input',
-        name: 'github',
-        message: 'What is your Github?',
-      },
-      {
-        type: 'input',
-        name: 'ema',
-        message: 'What is your email?',
-      },
-      {
-        type: 'input',
         name: 'pro',
-        message: 'What is your project name?',
+        message: 'What is the name of the Project?',
+      },
+      {
+        type: 'input',
+        name: 'descripInput',
+        message: 'Provide a short description?',
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'What is your  Tests, and Questions?',
       },
       {
         type: 'checkbox',
@@ -64,7 +47,7 @@ function init() {
       },
            ])
         .then((answers) => {
-        const readMePageContent = generateREADME(answers);
+       // const readMePageContent = generateREADME(answers);
 
         const newContent =  generateMarkdown(answers);
 
@@ -78,9 +61,10 @@ function init() {
 
   });
 }
-//This project is licensed under the APACHE 2.0 license
+
 // Function call to initialize app
 //Table of contents
+
 //Installation
 //Usage
 //license//
