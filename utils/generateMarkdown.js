@@ -33,15 +33,10 @@ return shield;
     shield = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
     console.log (shield)
     break;
-  
- 
-  
   default:
     break;
 }
    shield ='none';
-
-
 }
 
 */
@@ -54,46 +49,38 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown({ github, descripInput, lic }) {
+function generateMarkdown({ usage, projectN, installat, descripInput, lic }) {
   
   let shield2 = renderLicenseBadge(lic)
-console.log (shield)
+
 console.log (typeof shield)
 console.log (shield)
   return `
 
- 
-  ${shield2}
-
+   ${shield2}
+   # ${projectN}
   #Contents
   ## [Installation](#Installation)
   ## [Usage](#github)
-  
   ## [License](#license)
-  
   ## [Contributing](#Contributing)
   ## [Description](#Description)
   ## [Tests, and Questions](#Tests, and Questions)
 
 ## Installation
+${installat}
 ## Usage
-
+${usage}
 ## License
-
-## Contributing
-
-## Tests, and Questions
+This project is licensed under the [${lic}] license
 
 
-  ## Github
-  ${github}
-
-  ## description
+## description
   ${descripInput}
 
   
 
-  ###  This project is licensed under the ${lic} license
+  
   
 
 `;

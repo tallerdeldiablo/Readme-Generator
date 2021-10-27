@@ -6,12 +6,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // appendFile() takes in 3 arguments: path, data, and callback function
-
 // TODO: Create an array of questions for user input
 const questions = [];
-
-
-
 
 // TODO: Create a function to write README file
 
@@ -26,18 +22,23 @@ function init() {
     .prompt([
       {
         type: 'input',
-        name: 'pro',
+        name: 'projectN',
         message: 'What is the name of the Project?',
       },
       {
         type: 'input',
         name: 'descripInput',
         message: 'Provide a short description?',
+      },   
+       {
+        type: 'input',
+        name: 'installat',
+        message: 'Provide a installation?',
       },
       {
         type: 'input',
-        name: 'github',
-        message: 'What is your  Tests, and Questions?',
+        name: 'usage',
+        message: 'Provide instructions and examples for use',
       },
       {
         type: 'checkbox',
@@ -62,29 +63,6 @@ function init() {
   });
 }
 
-// Function call to initialize app
-//Table of contents
 
-//Installation
-//Usage
-//license//
-//contibutinf
-//tests
-//questions
-/*
-
-
-What is your github
-wt is y email adress
-whats projects name
-short description
-what kind of license
-A
-G
-B
-none
-
-
-*/
 
 init();
