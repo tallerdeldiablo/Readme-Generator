@@ -5,14 +5,7 @@ const inquirer = require('inquirer');
 // We import the `fs` module to enable interaction with the file system
 const fs = require('fs');
 
-// appendFile() takes in 3 arguments: path, data, and callback function
-// TODO: Create an array of questions for user input
-const questions = [];
-
-// TODO: Create a function to write README file
-
-
-function writeToFile(fileName, data) {}
+//function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -48,21 +41,14 @@ function init() {
       },
            ])
         .then((answers) => {
-       // const readMePageContent = generateREADME(answers);
 
         const newContent =  generateMarkdown(answers);
-
-        //const filename = `${answers.name.toLowerCase().split(' ').join('')}.md`;
-
      
   fs.writeFile('readme.md', newContent, (err) =>
   err ? console.log(err) : console.log(answers)
 );
 
-
   });
 }
-
-
 
 init();
